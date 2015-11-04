@@ -1,0 +1,12 @@
+diff -Naur pxview-0.2.5/src/main.c pxview-0.2.5-r1/src/main.c
+--- pxview-0.2.5/src/main.c	2005-08-09 23:57:20.000000000 +0400
++++ pxview-0.2.5-r1/src/main.c	2007-10-31 10:59:48.000000000 +0300
+@@ -2624,7 +2624,7 @@
+ 										if(0 < (ret = PX_get_data_alpha(pxdoc, &data[offset], pxf->px_flen, &value))) {
+ 											if(strchr(value, '\'')) {
+ 												fprintf(outfp, "'");
+-												printmask(outfp, value, '\'', '\\');
++												printmask(outfp, value, '\'', '\'');
+ 												fprintf(outfp, "'");
+ 											} else
+ 												fprintf(outfp, "'%s'", value);

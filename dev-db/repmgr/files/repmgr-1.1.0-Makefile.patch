@@ -1,0 +1,14 @@
+diff -Naur repmgr-1.1.0.old/Makefile repmgr-1.1.0/Makefile
+--- repmgr-1.1.0.old/Makefile	2012-06-21 09:21:35.822000002 +0400
++++ repmgr-1.1.0/Makefile	2012-06-21 09:22:13.695000000 +0400
+@@ -31,8 +31,8 @@
+ # XXX: Try to use PROGRAM construct (see pgxs.mk) someday. Right now
+ # is overriding pgxs install.
+ install:
+-	$(INSTALL_PROGRAM) repmgrd$(X) '$(DESTDIR)$(bindir)'
+-	$(INSTALL_PROGRAM) repmgr$(X) '$(DESTDIR)$(bindir)'
++	$(INSTALL_PROGRAM) repmgrd$(X) '$(DESTDIR)$(bindir)/repmgrd$(X)'
++	$(INSTALL_PROGRAM) repmgr$(X) '$(DESTDIR)$(bindir)/repmgr$(X)'
+ 
+ ifneq (,$(DATA)$(DATA_built))
+ 	@for file in $(addprefix $(srcdir)/, $(DATA)) $(DATA_built); do \

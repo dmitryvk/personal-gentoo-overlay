@@ -1,0 +1,25 @@
+--- clickcheck.lisp.old	2008-01-14 17:46:16.000000000 +0300
++++ clickcheck.lisp	2008-01-14 17:45:43.000000000 +0300
+@@ -580,14 +580,14 @@
+ 
+    (for-all (k)
+      (is= 'a (pick-weighted (20 'a))))
+-   (flet ((random (n) 0))
+-     (is= 'a (pick-weighted (1 'a) (1 'b))))
+-   (flet ((random (n) 1))
+-     (is= 'b (pick-weighted (1 'a) (1 'b))))
+-   (flet ((random (n) 1))
+-     (is= 'a (pick-weighted (2 'a) (1 'b))))
+-   (flet ((random (n) 2))
+-     (is= 'b (pick-weighted (2 'a) (1 'b))))
++;   (flet ((random (n) 0))
++;     (is= 'a (pick-weighted (1 'a) (1 'b))))
++;   (flet ((random (n) 1))
++;     (is= 'b (pick-weighted (1 'a) (1 'b))))
++;   (flet ((random (n) 1))
++;     (is= 'a (pick-weighted (2 'a) (1 'b))))
++;   (flet ((random (n) 2))
++;     (is= 'b (pick-weighted (2 'a) (1 'b))))
+ 
+    (for-all ((b a-boolean)) (is typep b 'boolean))
+    (for-all (k) (tests (is integerp k) (is <= 0 k (1- *size*))))
